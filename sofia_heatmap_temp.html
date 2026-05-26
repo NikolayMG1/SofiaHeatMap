@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8540251c76d1b6f4d979ea10e19b2f1c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8540251c76d1b6f4d979ea10e19b2f1c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8540251c76d1b6f4d979ea10e19b2f1c = L.map(
+                "map_8540251c76d1b6f4d979ea10e19b2f1c",
+                {
+                    center: [42.6977, 23.3219],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b2d981d15ccb7bfe2c9aeaaea07c0220 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b2d981d15ccb7bfe2c9aeaaea07c0220.addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+            var heat_map_29b15acc97df99936b5faf2594abf4bc = L.heatLayer(
+                [[42.7272, 23.2458, 0.7777777777777776], [42.6539, 23.2514, 0.4999999999999998], [42.7, 23.315, 0.8333333333333339], [42.67, 23.3483, 0.7500000000000003], [42.7128, 23.29, 0.7777777777777776], [42.6628, 23.4186, 0.8888888888888893], [42.7, 23.25, 0.5277777777777779], [42.682, 23.298, 0.7500000000000003], [42.75, 23.5, 1.0], [42.671, 23.33, 0.694444444444445], [42.7063, 23.2621, 0.7777777777777776], [42.6439, 23.3775, 0.7222222222222222], [42.7325, 23.2986, 0.861111111111111], [42.8, 23.35, 0.8888888888888893], [42.7, 23.338, 0.8888888888888893], [42.69, 23.25, 0.5277777777777779], [42.59, 23.4, 0.5277777777777779], [42.7, 23.367, 0.8888888888888893], [42.705, 23.305, 0.8333333333333339], [42.689, 23.372, 0.8888888888888893], [42.6977, 23.3219, 0.8055555555555557], [42.649, 23.353, 0.7777777777777776], [42.6772, 23.3089, 0.7500000000000003], [42.735, 23.26, 0.8333333333333339], [42.635, 23.265, 0.0], [42.66, 23.23, 0.44444444444444436], [42.668, 23.408, 0.8888888888888893], [42.62, 23.34, 0.5277777777777779], [42.715, 23.28, 0.7777777777777776], [42.685, 23.31, 0.7777777777777776], [42.73, 23.38, 0.8888888888888893], [42.63, 23.37, 0.7222222222222222], [42.74, 23.27, 0.8333333333333339], [42.75, 23.26, 0.8333333333333339], [42.66, 23.29, 0.5277777777777779], [42.63, 23.32, 0.5555555555555561], [42.705, 23.37, 0.8888888888888893], [42.71, 23.35, 0.8888888888888893], [42.695, 23.325, 0.8055555555555557], [42.68, 23.35, 0.7500000000000003]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 1,
+  "radius": 30,
+  "blur": 25,
+  "gradient": {
+  0.2: "green",
+  0.5: "yellow",
+  0.7: "orange",
+  1.0: "red",
+},
+}
+            );
+        
+    
+            heat_map_29b15acc97df99936b5faf2594abf4bc.addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+            var circle_marker_96ebb70448fe19c535e8af8587ddb77e = L.circleMarker(
+                [42.7272, 23.2458],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_ef0c04c12cedb36b884186d758e46862 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6d9eccd80e682f72d85f86127e859fd1 = $(`<div id="html_6d9eccd80e682f72d85f86127e859fd1" style="width: 100.0%; height: 100.0%;">         <b>Bancя</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.9°C<br>         Max Temp: 20.6°C<br>         Min Temp: 14.2°C         </div>`)[0];
+                popup_ef0c04c12cedb36b884186d758e46862.setContent(html_6d9eccd80e682f72d85f86127e859fd1);
+            
+        
+
+        circle_marker_96ebb70448fe19c535e8af8587ddb77e.bindPopup(popup_ef0c04c12cedb36b884186d758e46862)
+        ;
+
+        
+    
+    
+            var circle_marker_86b451073ebeac8d0915d70bb96beb10 = L.circleMarker(
+                [42.6539, 23.2514],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_d2566f306d995754c4d7c908df8a2fd8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fdae92507ec490ba1ad389b77c6f4919 = $(`<div id="html_fdae92507ec490ba1ad389b77c6f4919" style="width: 100.0%; height: 100.0%;">         <b>Витоша</b><br>         Date: 2023-06-15<br>         Avg Temp: 16.9°C<br>         Max Temp: 19.6°C<br>         Min Temp: 13.2°C         </div>`)[0];
+                popup_d2566f306d995754c4d7c908df8a2fd8.setContent(html_fdae92507ec490ba1ad389b77c6f4919);
+            
+        
+
+        circle_marker_86b451073ebeac8d0915d70bb96beb10.bindPopup(popup_d2566f306d995754c4d7c908df8a2fd8)
+        ;
+
+        
+    
+    
+            var circle_marker_bcc5314f5a1e18e842193598978d6b65 = L.circleMarker(
+                [42.7, 23.315],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_bb26e0238ddfa51d5ba44dcd292f4d53 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_aba7e3a4bb2a7ba9c42090a7ef541608 = $(`<div id="html_aba7e3a4bb2a7ba9c42090a7ef541608" style="width: 100.0%; height: 100.0%;">         <b>Възраждане</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.1°C<br>         Max Temp: 21.1°C<br>         Min Temp: 14.3°C         </div>`)[0];
+                popup_bb26e0238ddfa51d5ba44dcd292f4d53.setContent(html_aba7e3a4bb2a7ba9c42090a7ef541608);
+            
+        
+
+        circle_marker_bcc5314f5a1e18e842193598978d6b65.bindPopup(popup_bb26e0238ddfa51d5ba44dcd292f4d53)
+        ;
+
+        
+    
+    
+            var circle_marker_8a51efd888d1955149401ccc37f3f87f = L.circleMarker(
+                [42.67, 23.3483],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_3e32f4fda9f4cc60e46ff3d34ea09e59 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_10cce038fa67812c6a49eafd933dce51 = $(`<div id="html_10cce038fa67812c6a49eafd933dce51" style="width: 100.0%; height: 100.0%;">         <b>Изгрев</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.8°C<br>         Max Temp: 21.0°C<br>         Min Temp: 14.3°C         </div>`)[0];
+                popup_3e32f4fda9f4cc60e46ff3d34ea09e59.setContent(html_10cce038fa67812c6a49eafd933dce51);
+            
+        
+
+        circle_marker_8a51efd888d1955149401ccc37f3f87f.bindPopup(popup_3e32f4fda9f4cc60e46ff3d34ea09e59)
+        ;
+
+        
+    
+    
+            var circle_marker_ddf20b3d9c8abd63dba04ae4220f8c9d = L.circleMarker(
+                [42.7128, 23.29],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_bc629417739cb2cc2c4862715f26516a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b749e5442fd8091343879f1822250581 = $(`<div id="html_b749e5442fd8091343879f1822250581" style="width: 100.0%; height: 100.0%;">         <b>Илинден</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.9°C<br>         Max Temp: 20.7°C<br>         Min Temp: 14.2°C         </div>`)[0];
+                popup_bc629417739cb2cc2c4862715f26516a.setContent(html_b749e5442fd8091343879f1822250581);
+            
+        
+
+        circle_marker_ddf20b3d9c8abd63dba04ae4220f8c9d.bindPopup(popup_bc629417739cb2cc2c4862715f26516a)
+        ;
+
+        
+    
+    
+            var circle_marker_d160d3fa1ca22a2b678a047a6ca7fd7e = L.circleMarker(
+                [42.6628, 23.4186],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_8caae1baec4b80fb632fe1a7bcdf8b67 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_79d9cab16eed819506848f79cb956e92 = $(`<div id="html_79d9cab16eed819506848f79cb956e92" style="width: 100.0%; height: 100.0%;">         <b>Искър</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.5°C<br>         Min Temp: 14.8°C         </div>`)[0];
+                popup_8caae1baec4b80fb632fe1a7bcdf8b67.setContent(html_79d9cab16eed819506848f79cb956e92);
+            
+        
+
+        circle_marker_d160d3fa1ca22a2b678a047a6ca7fd7e.bindPopup(popup_8caae1baec4b80fb632fe1a7bcdf8b67)
+        ;
+
+        
+    
+    
+            var circle_marker_2669c34b884648a4f82ad9ed3991aa95 = L.circleMarker(
+                [42.7, 23.25],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_98748b63eded84b518db2a4bc5892893 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_16094721eba2844f1f1316d3b75198e8 = $(`<div id="html_16094721eba2844f1f1316d3b75198e8" style="width: 100.0%; height: 100.0%;">         <b>Красна поляна</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.0°C<br>         Max Temp: 19.8°C<br>         Min Temp: 13.3°C         </div>`)[0];
+                popup_98748b63eded84b518db2a4bc5892893.setContent(html_16094721eba2844f1f1316d3b75198e8);
+            
+        
+
+        circle_marker_2669c34b884648a4f82ad9ed3991aa95.bindPopup(popup_98748b63eded84b518db2a4bc5892893)
+        ;
+
+        
+    
+    
+            var circle_marker_044edc26b1aced6a2a79d5a43afbee48 = L.circleMarker(
+                [42.682, 23.298],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_217f8370dda5c3927d453b0a0a03d1dd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7fd70de6d3cccc9808f1a117c18719f0 = $(`<div id="html_7fd70de6d3cccc9808f1a117c18719f0" style="width: 100.0%; height: 100.0%;">         <b>Красно село</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.8°C<br>         Max Temp: 20.5°C<br>         Min Temp: 14.1°C         </div>`)[0];
+                popup_217f8370dda5c3927d453b0a0a03d1dd.setContent(html_7fd70de6d3cccc9808f1a117c18719f0);
+            
+        
+
+        circle_marker_044edc26b1aced6a2a79d5a43afbee48.bindPopup(popup_217f8370dda5c3927d453b0a0a03d1dd)
+        ;
+
+        
+    
+    
+            var circle_marker_b802967acd2f27f6bce903dfc18a26a5 = L.circleMarker(
+                [42.75, 23.5],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_6a57a6775785a44ad3fb945349b6d647 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8391d6562e1db33acd93d249ea013553 = $(`<div id="html_8391d6562e1db33acd93d249ea013553" style="width: 100.0%; height: 100.0%;">         <b>Кремиковци</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.7°C<br>         Max Temp: 22.4°C<br>         Min Temp: 14.6°C         </div>`)[0];
+                popup_6a57a6775785a44ad3fb945349b6d647.setContent(html_8391d6562e1db33acd93d249ea013553);
+            
+        
+
+        circle_marker_b802967acd2f27f6bce903dfc18a26a5.bindPopup(popup_6a57a6775785a44ad3fb945349b6d647)
+        ;
+
+        
+    
+    
+            var circle_marker_5d6c1961502fbe956ebfd106291932c7 = L.circleMarker(
+                [42.671, 23.33],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_67916161cf941d00e7464bc56befd33d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6c4fb6fa5b77674bd87638fa3518ce9f = $(`<div id="html_6c4fb6fa5b77674bd87638fa3518ce9f" style="width: 100.0%; height: 100.0%;">         <b>Лозенец</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.6°C<br>         Max Temp: 20.3°C<br>         Min Temp: 13.9°C         </div>`)[0];
+                popup_67916161cf941d00e7464bc56befd33d.setContent(html_6c4fb6fa5b77674bd87638fa3518ce9f);
+            
+        
+
+        circle_marker_5d6c1961502fbe956ebfd106291932c7.bindPopup(popup_67916161cf941d00e7464bc56befd33d)
+        ;
+
+        
+    
+    
+            var circle_marker_4c471ed7d8e2f142c357b155c05bb0aa = L.circleMarker(
+                [42.7063, 23.2621],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_6322b12935503447a3928eed6b4d563e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4b210fed5f05ac8cc389b4c293b90078 = $(`<div id="html_4b210fed5f05ac8cc389b4c293b90078" style="width: 100.0%; height: 100.0%;">         <b>Люлин</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.9°C<br>         Max Temp: 20.6°C<br>         Min Temp: 14.2°C         </div>`)[0];
+                popup_6322b12935503447a3928eed6b4d563e.setContent(html_4b210fed5f05ac8cc389b4c293b90078);
+            
+        
+
+        circle_marker_4c471ed7d8e2f142c357b155c05bb0aa.bindPopup(popup_6322b12935503447a3928eed6b4d563e)
+        ;
+
+        
+    
+    
+            var circle_marker_72446958e5b7a55c932dde76c1f079f2 = L.circleMarker(
+                [42.6439, 23.3775],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_55b9f9be020440ca7bb356970df498b3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c684b0e3af45f659b0add3f9fd0ee7e3 = $(`<div id="html_c684b0e3af45f659b0add3f9fd0ee7e3" style="width: 100.0%; height: 100.0%;">         <b>Младост</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.7°C<br>         Max Temp: 20.9°C<br>         Min Temp: 14.2°C         </div>`)[0];
+                popup_55b9f9be020440ca7bb356970df498b3.setContent(html_c684b0e3af45f659b0add3f9fd0ee7e3);
+            
+        
+
+        circle_marker_72446958e5b7a55c932dde76c1f079f2.bindPopup(popup_55b9f9be020440ca7bb356970df498b3)
+        ;
+
+        
+    
+    
+            var circle_marker_ff8428336ece8e90686f5e560c4ada7d = L.circleMarker(
+                [42.7325, 23.2986],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_9e7cb8871d86476e86ed005dc4908cf4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f5975a4daa85764161e2a2eb56b5d617 = $(`<div id="html_f5975a4daa85764161e2a2eb56b5d617" style="width: 100.0%; height: 100.0%;">         <b>Надежда</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.2°C<br>         Max Temp: 21.2°C<br>         Min Temp: 14.4°C         </div>`)[0];
+                popup_9e7cb8871d86476e86ed005dc4908cf4.setContent(html_f5975a4daa85764161e2a2eb56b5d617);
+            
+        
+
+        circle_marker_ff8428336ece8e90686f5e560c4ada7d.bindPopup(popup_9e7cb8871d86476e86ed005dc4908cf4)
+        ;
+
+        
+    
+    
+            var circle_marker_4d4097438b20ea44260499facda41afe = L.circleMarker(
+                [42.8, 23.35],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_5cc778eecbc94fbb84d7e02985727608 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fe2e983a99f83aede077d4d2642496ae = $(`<div id="html_fe2e983a99f83aede077d4d2642496ae" style="width: 100.0%; height: 100.0%;">         <b>Нови Искър</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.3°C<br>         Min Temp: 14.6°C         </div>`)[0];
+                popup_5cc778eecbc94fbb84d7e02985727608.setContent(html_fe2e983a99f83aede077d4d2642496ae);
+            
+        
+
+        circle_marker_4d4097438b20ea44260499facda41afe.bindPopup(popup_5cc778eecbc94fbb84d7e02985727608)
+        ;
+
+        
+    
+    
+            var circle_marker_e7d488825d39e8349e9c7e4f1c820b0f = L.circleMarker(
+                [42.7, 23.338],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_c42e3a50731d444361c8a77d34721220 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5380416fd4eaa9a95adf2810ce269c53 = $(`<div id="html_5380416fd4eaa9a95adf2810ce269c53" style="width: 100.0%; height: 100.0%;">         <b>Оборище</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.5°C<br>         Min Temp: 14.8°C         </div>`)[0];
+                popup_c42e3a50731d444361c8a77d34721220.setContent(html_5380416fd4eaa9a95adf2810ce269c53);
+            
+        
+
+        circle_marker_e7d488825d39e8349e9c7e4f1c820b0f.bindPopup(popup_c42e3a50731d444361c8a77d34721220)
+        ;
+
+        
+    
+    
+            var circle_marker_a21dc6013a1f2887d1366161ee4804da = L.circleMarker(
+                [42.69, 23.25],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_40b4203491a86fb596f61e6280dd07a8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f2ff15f38902da5a064536b8ce77cbbf = $(`<div id="html_f2ff15f38902da5a064536b8ce77cbbf" style="width: 100.0%; height: 100.0%;">         <b>Овча купел</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.0°C<br>         Max Temp: 19.8°C<br>         Min Temp: 13.3°C         </div>`)[0];
+                popup_40b4203491a86fb596f61e6280dd07a8.setContent(html_f2ff15f38902da5a064536b8ce77cbbf);
+            
+        
+
+        circle_marker_a21dc6013a1f2887d1366161ee4804da.bindPopup(popup_40b4203491a86fb596f61e6280dd07a8)
+        ;
+
+        
+    
+    
+            var circle_marker_a58c069d027d1d0d06b9ae59641db83f = L.circleMarker(
+                [42.59, 23.4],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_f9c0efdc7f93dd5e1871b05871f5ad05 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f6774b6e3fd4cc5d2a6e8569d28a6dab = $(`<div id="html_f6774b6e3fd4cc5d2a6e8569d28a6dab" style="width: 100.0%; height: 100.0%;">         <b>Панчарево</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.0°C<br>         Max Temp: 19.8°C<br>         Min Temp: 14.2°C         </div>`)[0];
+                popup_f9c0efdc7f93dd5e1871b05871f5ad05.setContent(html_f6774b6e3fd4cc5d2a6e8569d28a6dab);
+            
+        
+
+        circle_marker_a58c069d027d1d0d06b9ae59641db83f.bindPopup(popup_f9c0efdc7f93dd5e1871b05871f5ad05)
+        ;
+
+        
+    
+    
+            var circle_marker_7350b01f2ccf97f5ccc552dc0ff34f53 = L.circleMarker(
+                [42.7, 23.367],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_0a1949542fa34c8801054512ece6024b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a591ce7d7ad4538e404f42eaa7b5a5ae = $(`<div id="html_a591ce7d7ad4538e404f42eaa7b5a5ae" style="width: 100.0%; height: 100.0%;">         <b>Подуяне</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.5°C<br>         Min Temp: 14.8°C         </div>`)[0];
+                popup_0a1949542fa34c8801054512ece6024b.setContent(html_a591ce7d7ad4538e404f42eaa7b5a5ae);
+            
+        
+
+        circle_marker_7350b01f2ccf97f5ccc552dc0ff34f53.bindPopup(popup_0a1949542fa34c8801054512ece6024b)
+        ;
+
+        
+    
+    
+            var circle_marker_f2f04d2981a05e1f745bf0bd7aa5f327 = L.circleMarker(
+                [42.705, 23.305],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_2ea2c7fba77814445c5f45316730fe4d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ec21202fd9e63ecadddfcfae0b4ac547 = $(`<div id="html_ec21202fd9e63ecadddfcfae0b4ac547" style="width: 100.0%; height: 100.0%;">         <b>Сердика</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.1°C<br>         Max Temp: 21.1°C<br>         Min Temp: 14.3°C         </div>`)[0];
+                popup_2ea2c7fba77814445c5f45316730fe4d.setContent(html_ec21202fd9e63ecadddfcfae0b4ac547);
+            
+        
+
+        circle_marker_f2f04d2981a05e1f745bf0bd7aa5f327.bindPopup(popup_2ea2c7fba77814445c5f45316730fe4d)
+        ;
+
+        
+    
+    
+            var circle_marker_339d31f9101ab58feb4dc4021dda0927 = L.circleMarker(
+                [42.689, 23.372],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_f9b943a59ae8583763cea8974d9ec070 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_149970f21cef785ea7613944f7f2297a = $(`<div id="html_149970f21cef785ea7613944f7f2297a" style="width: 100.0%; height: 100.0%;">         <b>Слатина</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.5°C<br>         Min Temp: 14.8°C         </div>`)[0];
+                popup_f9b943a59ae8583763cea8974d9ec070.setContent(html_149970f21cef785ea7613944f7f2297a);
+            
+        
+
+        circle_marker_339d31f9101ab58feb4dc4021dda0927.bindPopup(popup_f9b943a59ae8583763cea8974d9ec070)
+        ;
+
+        
+    
+    
+            var circle_marker_d10b94298c20885c27ae72bc514d1396 = L.circleMarker(
+                [42.6977, 23.3219],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_dc2d31f6428b7e87c9da82a24c20c485 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3918b9c15ed57ecd3ca43878fc8667d3 = $(`<div id="html_3918b9c15ed57ecd3ca43878fc8667d3" style="width: 100.0%; height: 100.0%;">         <b>Средец</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.0°C<br>         Max Temp: 21.3°C<br>         Min Temp: 14.5°C         </div>`)[0];
+                popup_dc2d31f6428b7e87c9da82a24c20c485.setContent(html_3918b9c15ed57ecd3ca43878fc8667d3);
+            
+        
+
+        circle_marker_d10b94298c20885c27ae72bc514d1396.bindPopup(popup_dc2d31f6428b7e87c9da82a24c20c485)
+        ;
+
+        
+    
+    
+            var circle_marker_85da87511a6c967a181545585008a994 = L.circleMarker(
+                [42.649, 23.353],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_296bd2840b33623e9334f17c523ee2de = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_66f239d0f3a1c7ca93a213cc746855a0 = $(`<div id="html_66f239d0f3a1c7ca93a213cc746855a0" style="width: 100.0%; height: 100.0%;">         <b>Студентски</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.9°C<br>         Max Temp: 20.7°C<br>         Min Temp: 15.1°C         </div>`)[0];
+                popup_296bd2840b33623e9334f17c523ee2de.setContent(html_66f239d0f3a1c7ca93a213cc746855a0);
+            
+        
+
+        circle_marker_85da87511a6c967a181545585008a994.bindPopup(popup_296bd2840b33623e9334f17c523ee2de)
+        ;
+
+        
+    
+    
+            var circle_marker_a3127e70ce6b70ca7107ed84b076fee6 = L.circleMarker(
+                [42.6772, 23.3089],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_93d6e59f15daa2762d66a68edafce46d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_23aba69b49ab6720c909d7293a08d5dc = $(`<div id="html_23aba69b49ab6720c909d7293a08d5dc" style="width: 100.0%; height: 100.0%;">         <b>Триадица</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.8°C<br>         Max Temp: 20.6°C<br>         Min Temp: 14.1°C         </div>`)[0];
+                popup_93d6e59f15daa2762d66a68edafce46d.setContent(html_23aba69b49ab6720c909d7293a08d5dc);
+            
+        
+
+        circle_marker_a3127e70ce6b70ca7107ed84b076fee6.bindPopup(popup_93d6e59f15daa2762d66a68edafce46d)
+        ;
+
+        
+    
+    
+            var circle_marker_36a8aa34cce3b0424d06640df5a70d20 = L.circleMarker(
+                [42.735, 23.26],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_90826b39338dfe91afafa849e3f443f1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_116bd91827660ec5b4a0569267614ddc = $(`<div id="html_116bd91827660ec5b4a0569267614ddc" style="width: 100.0%; height: 100.0%;">         <b>Връбница</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.1°C<br>         Max Temp: 21.1°C<br>         Min Temp: 14.3°C         </div>`)[0];
+                popup_90826b39338dfe91afafa849e3f443f1.setContent(html_116bd91827660ec5b4a0569267614ddc);
+            
+        
+
+        circle_marker_36a8aa34cce3b0424d06640df5a70d20.bindPopup(popup_90826b39338dfe91afafa849e3f443f1)
+        ;
+
+        
+    
+    
+            var circle_marker_092f9efd74d9f9bf132e2b0750720bf6 = L.circleMarker(
+                [42.635, 23.265],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_077b82c5b74c106c925ee38d47e3d24a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1ac38d1f8d914ffbc524d0c2c9b017e8 = $(`<div id="html_1ac38d1f8d914ffbc524d0c2c9b017e8" style="width: 100.0%; height: 100.0%;">         <b>Бояна</b><br>         Date: 2023-06-15<br>         Avg Temp: 15.1°C<br>         Max Temp: 18.0°C<br>         Min Temp: 11.6°C         </div>`)[0];
+                popup_077b82c5b74c106c925ee38d47e3d24a.setContent(html_1ac38d1f8d914ffbc524d0c2c9b017e8);
+            
+        
+
+        circle_marker_092f9efd74d9f9bf132e2b0750720bf6.bindPopup(popup_077b82c5b74c106c925ee38d47e3d24a)
+        ;
+
+        
+    
+    
+            var circle_marker_f565efd09189dfbc88eff052ec88949e = L.circleMarker(
+                [42.66, 23.23],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_79921a6e38cbcbe364a9adb27f8cd087 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a7984ad8ec9a59c5b037e480f28dd4c4 = $(`<div id="html_a7984ad8ec9a59c5b037e480f28dd4c4" style="width: 100.0%; height: 100.0%;">         <b>Горна баня</b><br>         Date: 2023-06-15<br>         Avg Temp: 16.7°C<br>         Max Temp: 19.4°C<br>         Min Temp: 13.0°C         </div>`)[0];
+                popup_79921a6e38cbcbe364a9adb27f8cd087.setContent(html_a7984ad8ec9a59c5b037e480f28dd4c4);
+            
+        
+
+        circle_marker_f565efd09189dfbc88eff052ec88949e.bindPopup(popup_79921a6e38cbcbe364a9adb27f8cd087)
+        ;
+
+        
+    
+    
+            var circle_marker_6a418f3ca04e04a49eec4a09183fa957 = L.circleMarker(
+                [42.668, 23.408],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_3f14aa3265a2f9d9c5b47d9fab78f033 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d5460a68b5f2581d540625f5b944d429 = $(`<div id="html_d5460a68b5f2581d540625f5b944d429" style="width: 100.0%; height: 100.0%;">         <b>Дружба</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.5°C<br>         Min Temp: 14.8°C         </div>`)[0];
+                popup_3f14aa3265a2f9d9c5b47d9fab78f033.setContent(html_d5460a68b5f2581d540625f5b944d429);
+            
+        
+
+        circle_marker_6a418f3ca04e04a49eec4a09183fa957.bindPopup(popup_3f14aa3265a2f9d9c5b47d9fab78f033)
+        ;
+
+        
+    
+    
+            var circle_marker_45f2b4bdc4a4f34a0c99a523ce5166f2 = L.circleMarker(
+                [42.62, 23.34],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_41bc77cf9a556cf10905127a822d8790 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_37c0390c04a6d12cdb7cee13b29b8e0d = $(`<div id="html_37c0390c04a6d12cdb7cee13b29b8e0d" style="width: 100.0%; height: 100.0%;">         <b>Драгалевци</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.0°C<br>         Max Temp: 19.8°C<br>         Min Temp: 14.2°C         </div>`)[0];
+                popup_41bc77cf9a556cf10905127a822d8790.setContent(html_37c0390c04a6d12cdb7cee13b29b8e0d);
+            
+        
+
+        circle_marker_45f2b4bdc4a4f34a0c99a523ce5166f2.bindPopup(popup_41bc77cf9a556cf10905127a822d8790)
+        ;
+
+        
+    
+    
+            var circle_marker_934d6fcdd1e7f0c887e4c19c21adfb27 = L.circleMarker(
+                [42.715, 23.28],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_1bf998bc8951ba0ff73f779062b0bc1e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ab9f41aa2f949c6a208ff40635af2643 = $(`<div id="html_ab9f41aa2f949c6a208ff40635af2643" style="width: 100.0%; height: 100.0%;">         <b>Захарна фабрика</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.9°C<br>         Max Temp: 20.7°C<br>         Min Temp: 14.2°C         </div>`)[0];
+                popup_1bf998bc8951ba0ff73f779062b0bc1e.setContent(html_ab9f41aa2f949c6a208ff40635af2643);
+            
+        
+
+        circle_marker_934d6fcdd1e7f0c887e4c19c21adfb27.bindPopup(popup_1bf998bc8951ba0ff73f779062b0bc1e)
+        ;
+
+        
+    
+    
+            var circle_marker_a25371e7e5e0a7abc264e2c16fbd44ec = L.circleMarker(
+                [42.685, 23.31],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_41ff6e20d246f30f9792f7bf121958c0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0a1c5915cb9bdd669c6536873cf66dcc = $(`<div id="html_0a1c5915cb9bdd669c6536873cf66dcc" style="width: 100.0%; height: 100.0%;">         <b>Иван Вазов</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.9°C<br>         Max Temp: 20.6°C<br>         Min Temp: 14.2°C         </div>`)[0];
+                popup_41ff6e20d246f30f9792f7bf121958c0.setContent(html_0a1c5915cb9bdd669c6536873cf66dcc);
+            
+        
+
+        circle_marker_a25371e7e5e0a7abc264e2c16fbd44ec.bindPopup(popup_41ff6e20d246f30f9792f7bf121958c0)
+        ;
+
+        
+    
+    
+            var circle_marker_2812a2255ff56c0f7908fdae75e7b9a2 = L.circleMarker(
+                [42.73, 23.38],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_fd3af2a6415ee9c5fb1a3a4444d1423f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e85cfe55ff7773265a9dbc166f4f822a = $(`<div id="html_e85cfe55ff7773265a9dbc166f4f822a" style="width: 100.0%; height: 100.0%;">         <b>Малашевци</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.5°C<br>         Min Temp: 14.8°C         </div>`)[0];
+                popup_fd3af2a6415ee9c5fb1a3a4444d1423f.setContent(html_e85cfe55ff7773265a9dbc166f4f822a);
+            
+        
+
+        circle_marker_2812a2255ff56c0f7908fdae75e7b9a2.bindPopup(popup_fd3af2a6415ee9c5fb1a3a4444d1423f)
+        ;
+
+        
+    
+    
+            var circle_marker_21ce4acb2c30e1f3907a74efa5f6f880 = L.circleMarker(
+                [42.63, 23.37],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_f4ccd72ded31ba43169c897586b6355a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4631fa8ce812f815536dd22e234e346b = $(`<div id="html_4631fa8ce812f815536dd22e234e346b" style="width: 100.0%; height: 100.0%;">         <b>Малинова долина</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.7°C<br>         Max Temp: 20.5°C<br>         Min Temp: 14.9°C         </div>`)[0];
+                popup_f4ccd72ded31ba43169c897586b6355a.setContent(html_4631fa8ce812f815536dd22e234e346b);
+            
+        
+
+        circle_marker_21ce4acb2c30e1f3907a74efa5f6f880.bindPopup(popup_f4ccd72ded31ba43169c897586b6355a)
+        ;
+
+        
+    
+    
+            var circle_marker_9d1038dcc93064eda37b3ae105ee94cf = L.circleMarker(
+                [42.74, 23.27],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_319cf7741fe8d43ffef1e0edb01780c1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a9363f6680c742cbaaa6ed3ae80d0d18 = $(`<div id="html_a9363f6680c742cbaaa6ed3ae80d0d18" style="width: 100.0%; height: 100.0%;">         <b>Модерно предградие</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.1°C<br>         Max Temp: 21.2°C<br>         Min Temp: 14.4°C         </div>`)[0];
+                popup_319cf7741fe8d43ffef1e0edb01780c1.setContent(html_a9363f6680c742cbaaa6ed3ae80d0d18);
+            
+        
+
+        circle_marker_9d1038dcc93064eda37b3ae105ee94cf.bindPopup(popup_319cf7741fe8d43ffef1e0edb01780c1)
+        ;
+
+        
+    
+    
+            var circle_marker_dfdfab4a5623abecf88d9660e3802116 = L.circleMarker(
+                [42.75, 23.26],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_68c7ebb9388535376e152a2746870400 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f4b2922b400ee3c5e8461638ed683be9 = $(`<div id="html_f4b2922b400ee3c5e8461638ed683be9" style="width: 100.0%; height: 100.0%;">         <b>Обеля</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.1°C<br>         Max Temp: 21.2°C<br>         Min Temp: 14.4°C         </div>`)[0];
+                popup_68c7ebb9388535376e152a2746870400.setContent(html_f4b2922b400ee3c5e8461638ed683be9);
+            
+        
+
+        circle_marker_dfdfab4a5623abecf88d9660e3802116.bindPopup(popup_68c7ebb9388535376e152a2746870400)
+        ;
+
+        
+    
+    
+            var circle_marker_5fdd0586327c4202e02618f36aacf0cd = L.circleMarker(
+                [42.66, 23.29],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_a1bc10ee3727aeac85a06369326e45e5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e8048a53cd1632e5d23799b6bdb50ec2 = $(`<div id="html_e8048a53cd1632e5d23799b6bdb50ec2" style="width: 100.0%; height: 100.0%;">         <b>Павлово</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.0°C<br>         Max Temp: 19.8°C<br>         Min Temp: 13.3°C         </div>`)[0];
+                popup_a1bc10ee3727aeac85a06369326e45e5.setContent(html_e8048a53cd1632e5d23799b6bdb50ec2);
+            
+        
+
+        circle_marker_5fdd0586327c4202e02618f36aacf0cd.bindPopup(popup_a1bc10ee3727aeac85a06369326e45e5)
+        ;
+
+        
+    
+    
+            var circle_marker_d7923624f4952b5220eb9d9dd6f90e33 = L.circleMarker(
+                [42.63, 23.32],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_5f27a9a0959fa91e386485ab4d01e417 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d23fa22bc1acd84ff63130f1d096ab7d = $(`<div id="html_d23fa22bc1acd84ff63130f1d096ab7d" style="width: 100.0%; height: 100.0%;">         <b>Симеоново</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.1°C<br>         Max Temp: 20.0°C<br>         Min Temp: 14.4°C         </div>`)[0];
+                popup_5f27a9a0959fa91e386485ab4d01e417.setContent(html_d23fa22bc1acd84ff63130f1d096ab7d);
+            
+        
+
+        circle_marker_d7923624f4952b5220eb9d9dd6f90e33.bindPopup(popup_5f27a9a0959fa91e386485ab4d01e417)
+        ;
+
+        
+    
+    
+            var circle_marker_f44aee120339d41adc37baac428b9469 = L.circleMarker(
+                [42.705, 23.37],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_90a007bdaaac9cdd1a788a88f74a6759 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d738d78b4a1aa49274f7acdb87749817 = $(`<div id="html_d738d78b4a1aa49274f7acdb87749817" style="width: 100.0%; height: 100.0%;">         <b>Суха река</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.5°C<br>         Min Temp: 14.8°C         </div>`)[0];
+                popup_90a007bdaaac9cdd1a788a88f74a6759.setContent(html_d738d78b4a1aa49274f7acdb87749817);
+            
+        
+
+        circle_marker_f44aee120339d41adc37baac428b9469.bindPopup(popup_90a007bdaaac9cdd1a788a88f74a6759)
+        ;
+
+        
+    
+    
+            var circle_marker_411f96a4bdd888865e7fe70955270dda = L.circleMarker(
+                [42.71, 23.35],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_f540d859b92bc2dbb52f825c513ea25a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ee503d046915ec6578bb86666559091c = $(`<div id="html_ee503d046915ec6578bb86666559091c" style="width: 100.0%; height: 100.0%;">         <b>Хаджи Димитър</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.3°C<br>         Max Temp: 21.5°C<br>         Min Temp: 14.8°C         </div>`)[0];
+                popup_f540d859b92bc2dbb52f825c513ea25a.setContent(html_ee503d046915ec6578bb86666559091c);
+            
+        
+
+        circle_marker_411f96a4bdd888865e7fe70955270dda.bindPopup(popup_f540d859b92bc2dbb52f825c513ea25a)
+        ;
+
+        
+    
+    
+            var circle_marker_b1519696ab734789dcaef86cbbbc0cda = L.circleMarker(
+                [42.695, 23.325],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_59b262f64bda5d6b7087f1040cead331 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ca22f38d4711a0fa101f22765e18b9b6 = $(`<div id="html_ca22f38d4711a0fa101f22765e18b9b6" style="width: 100.0%; height: 100.0%;">         <b>Център</b><br>         Date: 2023-06-15<br>         Avg Temp: 18.0°C<br>         Max Temp: 21.2°C<br>         Min Temp: 14.5°C         </div>`)[0];
+                popup_59b262f64bda5d6b7087f1040cead331.setContent(html_ca22f38d4711a0fa101f22765e18b9b6);
+            
+        
+
+        circle_marker_b1519696ab734789dcaef86cbbbc0cda.bindPopup(popup_59b262f64bda5d6b7087f1040cead331)
+        ;
+
+        
+    
+    
+            var circle_marker_c585ec0a446bd9d5b0a993df61c7ae64 = L.circleMarker(
+                [42.68, 23.35],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_8540251c76d1b6f4d979ea10e19b2f1c);
+        
+    
+        var popup_239c3bf9dae8e60535b9e186885d3d29 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_581ba41e89c73572b6a0f63681ed2a99 = $(`<div id="html_581ba41e89c73572b6a0f63681ed2a99" style="width: 100.0%; height: 100.0%;">         <b>Яворов</b><br>         Date: 2023-06-15<br>         Avg Temp: 17.8°C<br>         Max Temp: 21.1°C<br>         Min Temp: 14.3°C         </div>`)[0];
+                popup_239c3bf9dae8e60535b9e186885d3d29.setContent(html_581ba41e89c73572b6a0f63681ed2a99);
+            
+        
+
+        circle_marker_c585ec0a446bd9d5b0a993df61c7ae64.bindPopup(popup_239c3bf9dae8e60535b9e186885d3d29)
+        ;
+
+        
+    
+</script>
+</html>
